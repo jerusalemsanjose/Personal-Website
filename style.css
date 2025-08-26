@@ -1,0 +1,362 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Pixelify Sans', monospace;
+  color: white;
+  overflow-x: hidden;
+  background: linear-gradient(270deg,
+    rgba(53, 2, 2, 0.6),
+    rgba(13,17,23,0.5),
+    rgba(22,27,34,0.55),
+    rgba(0, 58, 41, 0.65),
+    rgba(80, 1, 1, 0.6)
+  ), url("assets/435951.jpg") no-repeat center center fixed;
+  background-size: 800% 800%, cover;
+  background-blend-mode: overlay;
+  animation: gradientShift 15s ease infinite;
+}
+
+canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+
+@font-face {
+  font-family: 'Pixelify Sans';
+  src: url("assets/fonts/PixelifySans-VariableFont_wght.ttf") format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+.content-box {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.239);
+  border-radius: 12px;
+  width: 42rem;
+  max-width: 90%;
+  padding: 2rem;
+  margin: 6rem auto;
+  text-align: center;
+}
+
+.content-details {
+  font-size: 3vh;
+  border-radius: 12px;
+}
+
+.content-details summary {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0.8rem 1rem;
+  list-style: none;
+  user-select: none;
+  transition: background 0.3s ease;
+}
+
+.content-details[open] summary {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.details-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.6s ease, opacity 0.5s ease;
+  padding: 0 1rem;
+}
+
+.content-details[open] .details-content {
+  max-height: 500px;
+  opacity: 1;
+  padding: 1rem;
+}
+
+
+
+#loading-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  color: white;
+  font-family: 'Pixelify Sans', monospace;
+  background-image: url("assets/Background1.jpg");
+}
+
+.intro-text {
+  font-size: 2rem;
+  opacity: 0;
+  animation: fadeInOut 3s ease forwards;
+}
+
+.intro-text:nth-child(1) { animation-delay: 0.1s; }
+.intro-text:nth-child(2) { animation-delay: 2.5s; }
+
+#loading-container {
+  position: relative;
+  width: 90%;
+  max-width: 50rem;
+  margin-top: 2rem;
+}
+
+#loading-bar {
+  width: 0; height: 5px;
+  background: linear-gradient(90deg, #ff0044, #00ffaa);
+  border-radius: 4px;
+}
+
+#loading-percent {
+  margin-top: 10px;
+  text-align: bottom;
+  font-size: 1.2rem;
+  text-align: center;
+  align-items: center;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.pixel-cat {
+  display: none;
+  position: fixed;                    
+  inset: clamp(12px, 2vh, 24px) 
+         clamp(16px, 2vw, 40px) 
+         auto 
+         auto;                        
+  z-index: 10000;
+  pointer-events: none;              
+}
+
+.pixel-cat img {
+  width: clamp(5rem, 4vw, 64px);      
+  image-rendering: pixelated;
+  animation: bounce 1.2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+
+
+
+section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+section h1,
+section p {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: textFadeUp 1s ease forwards;
+}
+
+section p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  opacity: 0.8;
+  animation-delay: 0.1s;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(120deg,
+    rgba(0, 0, 0, 0.275),
+    rgba(22, 22, 22, 0.216) 50%,
+    rgba(3, 3, 3, 0.963) 100%
+  );
+  z-index: 2;
+}
+
+h1, p {
+  position: relative;
+  margin: 10px 0;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: textFadeUp 1s ease-out forwards;
+}
+
+h1 {
+  font-size: 5vh;
+  line-height: 1.3;
+  letter-spacing: 1px;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  margin-bottom: 1rem;
+  animation-delay: 0.2s;
+}
+
+p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  opacity: 0.95;
+  padding: 0.5rem 0;
+  max-width: 650px;
+  margin: 12px auto;
+  text-align: justify;
+  color: #f1f1f1;
+  animation-delay: 0.5s;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  z-index: 1000;
+  background: transparent;
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  list-style: none;
+}
+
+nav a {
+  font-weight: bold;
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-size: 3vh;
+  padding: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #16131fee;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b9b9b9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #858585;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%, center; }
+  50% { background-position: 100% 50%, center; }
+  100% { background-position: 0% 50%, center; }
+}
+
+@keyframes textFadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  section {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+
+  section h1 {
+    font-size: 2rem;
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
+  }
+
+  section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 90%;
+  }
+
+  .content-box {
+    width: 95%;
+    padding: 1.5rem;
+    margin: 3rem auto;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0.8rem;
+  }
+
+  nav a {
+    font-size: 1rem;
+    padding: 0.5rem 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 1.5rem 1rem;
+  }
+
+  section h1 {
+    font-size: 1.4rem;
+    margin-bottom: 0.6rem;
+  }
+
+  section p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .content-box {
+    padding: 1rem;
+    margin: 2rem auto;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+  }
+}

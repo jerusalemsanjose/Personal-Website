@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+
+  <title>Website</title>
+  <link rel="shortcut icon" type="image/png" href="assets/icons/person.png">
+</head>
+<body>
+
+  <!-- Slideshow -->
+  <div class="slideshow">
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#intro">Intro</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+    </ul>
+  </nav>
+
+  <!-- Intro Section -->
+  <section id="intro">
+    <div class="overlay"></div>
+    <div class="content-box">
+      <h1>┃ Welcome Traveler!</h1>
+      <p>
+        ♢ This is my official website where I showcase my personal projects, document my learning journey, and share ideas I’m currently exploring. 
+        From small experiments to larger applications, everything here reflects my growth as a developer.
+      </p>
+      <p>
+        Whether you’re here to explore code, gain inspiration, or just see what I’ve been working on, I invite you to take a look around 
+        and check out the projects that interest you.
+      </p>
+    </div>
+  </section>
+
+    <div class="pixel-cat">
+        <img src="assets/icons/555.png" alt="Pixel Cat">
+    </div>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="overlay"></div>
+    <div class="content-box">
+      <h1>┃ My Profile!</h1>
+      <p>
+        ♢ I’m an 18-year-old backend developer who enjoys turning ideas into working software. I build systems, create games, and work on web projects that balance performance with creativity.
+      </p>
+      <p>
+        I keep my style simple — write clean code, solve problems, and make sure things actually run the way they should. Always learning, always improving, and always up for building something new.
+      </p>
+      <br>
+
+      <!-- Questions and Answers -->
+      <details class="content-details">
+        <summary>╵ What languages do you use?</summary>
+            <p>♢ I work with C, C++, and Python — still leveling up in all of them.  
+            Right now, I’m learning JavaScript for backend web development.  
+            Once I’m solid with that, I plan on diving into Rust, and Go to go deeper :D.
+            </p>
+        </details>
+        <details class="content-details">
+        <summary>╵ How long have you been coding?</summary>
+            <p>Kinda almost a year now, I started in 12th Grade — but I was just messing around that time, but now I'm building full projects. </p>
+        </details>
+        <details class="content-details">
+        <summary>╵ Are you open to collaborations or projects?</summary>
+            <p>Yeah.. if the project’s interesting and I can learn something from it, I’m in :D! </p>
+        </details>
+        <details class="content-details">
+        <summary>╵ What kind of games/software have you made?</summary>
+            <p>Small projects, mostly for fun — and experimenting. I usually build useful tools in everyday basis, for school, work, etc..  </p>
+            <p>For games, I usually use Python and C++. But I'm more comfortable with LUA since I used to script in Roblox Studio back in 2022</p>
+        </details>
+        <br>
+            <footer>
+                <i>Created By - Jerus San-Jose</i>
+            </footer>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="overlay"></div>
+    <div class="content-box">
+      <h1>┃ This Part is Still on Progressy!</h1>
+    </div>
+  </section>
+
+  <!-- Canvas -->
+  <canvas id="grad"></canvas>
+    <div id="loading-screen">
+        <div class="intro-text">Loading Page..</div>
+        <div class="intro-text">Done!</div>
+        <div id="loading-container">
+        <div id="loading-bar"></div>
+        <div id="loading-percent">0%</div>
+  </div>
+</div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://raw.githack.com/strangerintheq/rgba/0.0.8/rgba.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
